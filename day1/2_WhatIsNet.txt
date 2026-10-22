@@ -1,0 +1,31 @@
+In this lesson, we will learn and know what is C#, .Net, .NetFrameWork, .NetCore, .Net, ASP.NET, ASP.NET Core
+
+First of all:
+1. C# -> This is program language, same with java, javascript, C++, C, Python,
+    ... C# have key work like class, interface, public, privite,..
+    This just use for know and think about logic and develop.
+
+2. CLR (Common Language Runtime) - BCL (Base Class Library)
+- CLR (Common Language Runtime) - Cỗ máy trách nhiệm biên dịch mã trung gian sang mã máy, 
+    hiểu nôm na là ngôn ngữ lập trình sang ngôn ngữ hệ thống.
+- BCL (Base Class Library) - Thư viện có sẵn của Microsoft cung cấp các hàm cơ bản như xử lý chuỗi (String),
+    cấu trúc dữ liệu (List<T>, Dictionary), Đọc ghi fileStream.
+
+
+3. .NetFrameWork (Old - Legacy)
+- Was born in 2002, end version is 4.8 
+- Just used in Window OS, Inteligate with IIS. If project run with .Net Framework 4.5/4.8, so this project can't run in Linux OS.
+
+4. .Net Core (Replace for .NetFramework)
+- Was born in 2016 (.NetCore 1.0 to 3.1)
+- Can use in another OS.
+
+5. .Net (remove Core in name (.Net Core))
+- .Net continue develop with 5.x version, pass 4.x version.
+- When we listen some one create project with net 6, net 7, net 8 -> this is .Net (.Net Core)
+
+6. ASP.NET and ASP.NET CORE
+- ASP.NET is library for develop website, use basic core is .NetFrameWork, this just use in window.
+- ASP.NET core is library, framework run on basic .Net Core, .Net, this framework provide some tools for make web like WebAPI, MVC, gRPC, Razor Pages,..
+
+

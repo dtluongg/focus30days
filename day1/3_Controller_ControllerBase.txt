@@ -1,0 +1,77 @@
+Intro: When we start project in ASP.NET Core Web API, we usually see code interhirace one of two class: ControllerBase{} or Controller{}
+Example:    public class ProductsController: ControllerBase{...} (use for API - mình xuất ra api cho react)
+            public class HomeController: Controller{...} (use for MVC - chú Tùng làm các dashboard) 
+I. Different between ControllerBase and Controller
+1. What is ControllerBase (use for web API) 
+- ControllerBase have core component for make API: Control HTTP Context, Request, Reponse, User and 
+    another helper method response data like is: Ok(), Notfound(), BadRequest(), CreateAtAction(),...
+- This controller don't support view interface HTML view, as make app to smooth, reduce memory for backend RESTful. 
+- Use when sever just reponse API and client need access to API to get data.
+2. What is Controller (use for MVC - Model View Controller)
+- Controller have been interhirance live from ControllerBase, this add some method execute interface like View(), PartialView(), ViewData, ViewBag.
+- Use when server render HTML for browser. (Mr.Tung's Projects)
+
+* When use project make API, we nerver forgot use interhirance from ControllerBase, interligate attribute [ApiController].
+
+
+
+==========================================================================================================================================
+
+II. Http Request Binding: how line Data go to controller?
+- When client request to server, ASP.NET Core use model binding for filter data from HTTP Request and set for some variance of function.
+    We have four variance
+
+a. [FromRoute] - get from URL path.
+- use for initial one value (id) - call it is Unique Identifier.
+- example: GET /api/products/10 -> id = 10
+- code: 
+[HttpGet("{id}")]
+public IActionResult GetById([FromRoute] int id)
+
+b. [FromQuery] - get from QueryString (after char ?)
+- set after "?" char, all key value connect by "&" char.
+- use when we have many key and value, use for look, find, arrange, sort,..
+- example: GET /api/products?color=red&quantity=20&price=30000
+- code:
+[HttpGet]
+public IActionResult GetByFilter([FromQuery] string color, [FromQuery] int quantity, [FromQuery] int price)
+
+
+c. [FromBody] - get from body of HTTP Request (Request Body)
+- use for data have complex payload. (normally data is JSON)
+- use when for Create new (POST) or Update (PUT)
+- code: 
+[HttpPost]
+public IActionResult CreateNew([FromBody] CreateProductDTO request)
+
+d. [FromHeader] - get HTTP from Headers
+- use for metadata, authorize info, API KEY, or get user language, 
+    and JWT,... (I guess)
+- code:
+[HttpGet("secure-data)]
+public IActionResult GetSecureData ([FromHeader(Name="Authorization")] string accessToken)
+
+
+==========================================================================================================================================
+
+III. Check Data Annotations (Required | StringLength | Range)
+- Before we go to step create controller, we should check require data, this is step help database safety.
+- example:
+    first ----  [Required(ErrorMessage = "Name is not none")] 
+    second ---  [StringLength(100, MinimumLength = 3, ErrorMessage = "Name is more than 5 character")]
+    third ----  [Range(0.01, 10000, ErrorMessage = "Price need more than 20000")]
+- code:
+    public class CreateProductDto
+    {
+        [Required(ErrorMessage = "Name is not none")] 
+        [StringLength(100, MinimumLength = 3, ErrorMessage = "Name is more than 5 character")]
+        public string Name {get; set;} = string.Empty;
+
+        [Range(0.01, 10000, ErrorMessage = "Price need more than 20000")]
+        public decimal Salary {get; set;}
+    }
+
+
+
+
+* what problem if we use private for variance?

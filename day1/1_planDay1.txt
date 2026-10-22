@@ -1,0 +1,5 @@
+Ngày 01 Giải Mã Controller & HTTP Request Binding
+●	Hiểu bản chất Controller trong .NET Core: Phân biệt `Controller` (cho MVC trả View) vs `ControllerBase` (cho Web API trả JSON).
+●	Cách nhận dữ liệu: Phân biệt rõ `[FromBody]`, `[FromQuery]`, `[FromRoute]`, `[FromHeader]`. Khi nào dùng cái nào?
+●	Kiểm tra dữ liệu đầu vào bằng Data Annotations (`[Required]`, `[StringLength]`, `[Range]`).
+Output Ngày 1: Tạo 1 Controller nhận đủ 3 kiểu tham số (Route Id, Query search, Body JSON) và tự động chặn dữ liệu lỗi trước khi vào hàm.
