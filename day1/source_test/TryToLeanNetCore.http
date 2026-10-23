@@ -1,0 +1,42 @@
+@TryToLearnNetCore_HostAddress = https://localhost:7224
+GET http://localhost:5050/weatherforecast
+Accept: application/json
+
+
+###
+
+GET {{TryToLearnNetCore_HostAddress}}/weatherforecast
+
+###
+
+@notify=False
+PUT {{TryToLearnNetCore_HostAddress}}/api/cars/Car01?notify={{notify}}
+Content-Type: application/json
+
+{
+  "carID": "Car01",
+  "carName": "Dodge Challenger",
+  "carType": "Muscal",
+  "carPrice": 2312312,
+  "carTopSpeed": 213
+}
+
+###
+
+PUT {{TryToLearnNetCore_HostAddress}}/api/cars/{id}?notify={{notify}}
+Content-Type: application/json
+
+{
+  //Cars
+}
+
+###
+
+PUT {{TryToLearnNetCore_HostAddress}}/api/cars/{id}?notify={{notify}}
+Content-Type: application/json
+
+{
+  //Cars
+}
+
+###

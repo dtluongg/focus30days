@@ -44,7 +44,7 @@ c. [FromBody] - get from body of HTTP Request (Request Body)
 [HttpPost]
 public IActionResult CreateNew([FromBody] CreateProductDTO request)
 
-d. [FromHeader] - get HTTP from Headers
+d. [FromHeader] - get HTTP from Headers - Header get from Browser.
 - use for metadata, authorize info, API KEY, or get user language, 
     and JWT,... (I guess)
 - code:
@@ -75,3 +75,7 @@ III. Check Data Annotations (Required | StringLength | Range)
 
 
 * what problem if we use private for variance?
+-> If we use private -> All method cannot call and use this variance. Because funtion get variance private too.
+* Why Java can use private but C# cannot?
+-> Because Java use private for variance but it different with method. Method need use public. 
+-> example: private string name; -> public void getName(){};

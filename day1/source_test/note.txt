@@ -1,0 +1,5 @@
+If want to test API.
+1. use Postman
+2. test live in VS2022 (requirement: open from Developver Command Prompt for VS 2022)
+    run devenv
+    and (dotnet dev-certs https --trust)
