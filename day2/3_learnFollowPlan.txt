@@ -1,0 +1,64 @@
+1. Why we set reponse OK(200) combine return status = false is not good?
+-> Becasue HTTP status code response just is basic respone for user know this function work or not.
+    But return data = false when response OK -> it if error at logic code. -> We need change.
+-> If Server auto response success, frontend will be need filter at every where with !res.data.success...
+
+===============================================================================================
+2. Use match in ControllerBase method.
+- Ok()  - Http 200 Ok: normally use in some method likes Get, put/patch after update code successful and want to see new data latest update.
+        - code:
+            [HttpGet("{ID}")]
+            public IActionResult GetByINT(id){
+                var car = _carService.GetByID(id);
+                return Ok(car);  // return status 200 and payload car.
+            } 
+
+- Created() & CreatedAtAction() - Http 201 Created: require from client to make one record in Database. 
+        - code:
+            [HttpPost]
+            public IActionResult CreateNewCar([FromBody] CreateCarDto carDTO){
+                var newCar = _carService.NewCar(carDTO);
+                return CreateAtAction(nameof(GetByID), new {id = newCar.ID}, newCar);
+
+            }
+
+- NoContent() - Http 204 No Content: when update or delete but don't need server reponse any things.
+        - code: 
+            [HttpDelete("{id}")]
+            public IActionResult DeleteCar(idCar){
+                _carService.DeleteCar(idCar);
+                return NoContent(); // HTTP 204, no body, save bandwind Internet.
+            }
+
+- BadRequest() - Http 400 BadRequest: when client send data to sever but not match requirement from server.
+        - code:
+            [HttpPost("{id}")]
+            public IActionResult ProcessData([FromBody] OrderDto order){
+                if(order.value < 0){
+                    return BadRequest ("value need more >= 0, please check again");
+                }
+                return Ok();
+            }
+
+- NotFound() - Http 404 Not Found: When client request get data but server cannot find this data in databse.
+        - code:
+            [HttpGet("{id}")]
+            public IActionResult GetDataWithID ([FromRoute] int id){
+                var car = _carService.getByID(id);
+                if(car == null) return NotFound("Cannot find this car with code is: {id}"); // Http 404
+                return Ok();
+            }
+
+===============================================================================================
+
+* NOTE:
+    - If we don't setup reponse HTTP, HTTP will be auto use default response of REST with error 400.
+
+            
+
+
+
+                        
+===============================================================================================            
+===============================================================================================
+===============================================================================================

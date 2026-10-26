@@ -1,0 +1,23 @@
+REST API - RESTFul API: Là tiêu chuẩn thiết kế theo các nguyên tắc của kiến trúc REST (Representational State Transfer), 
+                        cho phép các hệ thống phần mềm giao tiếp với nhau qua HTTP.
+
+* Các đặc điểm chính: 
+    - Mô hình client - server: tách biệt độc lập giữa phía gửi yêu cầu (client) và phía máy chủ (server)
+    - Phi trạng thái (State): mỗi yêu cầu phải gửi đầy đủ thông tin cần thiết để server hiểu và xử lý, 
+                              server không lưu lại trạng thái giữa các phiên.
+    - Khả năng lưu cache (Cacheable): Dữ liệu trả về của server có thể lưu trong bộ như cache để giúp tăng tốc độ phản hồi cho lần request tiếp theo.
+    - Giao diện thống nhất: Quy định cách thức tương tác đồng bộ thông qua các URI đại diện cho tài nguyên.
+
+* Các phương thức phổ biến:
+    - POST (create)
+    - GET   (select)
+    - PUT or PATCH (update)
+    - DELETE (delete)
+
+* Mã trạng thái HTTP thường gặp:
+    - 200: 0k
+    - 201: Đã tạo thành công
+    - 400: Yêu cầu ko hợp lệ từ client
+    - 401: Chưa xác thực
+    - 404: Không tìm thấy tài nguyên theo yêu cầu.
+    - 500: Lỗi phía máy chủ

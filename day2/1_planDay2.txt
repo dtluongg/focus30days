@@ -1,0 +1,5 @@
+Ngày 02 Chuẩn Hóa RESTful Responses & HTTP Status Codes
+●	Tại sao trả về `200 OK` kèm cờ `{ success: false }` là thói quen xấu?
+●	Sử dụng đúng các phương thức trả về: `Ok()`, `Created()`, `CreatedAtAction()`, `NoContent()`, `BadRequest()`, `NotFound()`.
+●	Cấu trúc dữ liệu trả về chuẩn thống nhất (Standard API Response Wrapper: Data, Success, Message, Errors).
+Output Ngày 2: Xây dựng 1 Response Wrapper mẫu và áp dụng cho các API CRUD để Frontend luôn nhận đúng một format JSON nhất quán.
