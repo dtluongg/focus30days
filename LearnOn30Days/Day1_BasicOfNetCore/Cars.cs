@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TryToLearnNetCore.LearnOn30Days.Day1
+namespace TryToLearnNetCore.LearnOn30Days.Day1_BasicOfNetCore
 {
     public class Cars2
     {

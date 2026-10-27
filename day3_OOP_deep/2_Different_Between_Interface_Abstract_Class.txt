@@ -1,0 +1,3 @@
+Abstract Class (family | is - a): Children Class can Inheritance all method, attribute from Parent class. (one class just use only inheritance one parent class)
+Interface (Contract | Can - do): Can know basic is action, one class can use many interface.
+

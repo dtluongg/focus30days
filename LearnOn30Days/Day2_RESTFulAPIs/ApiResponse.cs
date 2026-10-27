@@ -1,4 +1,4 @@
-﻿namespace TryToLearnNetCore.LearnOn30Days.Day2
+﻿namespace TryToLearnNetCore.LearnOn30Days.Day2_RESTFulAPIs
 {
     public class ApiResponse<T>
     {

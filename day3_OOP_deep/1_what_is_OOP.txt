@@ -1,0 +1,17 @@
+OOP is Object-Oriented Programing - hướng đối tượng.
+1. Encapsulation (Đóng gói) - All attribute need protect by key "private" and if our want to access this attribute to get data, we will initial method (public)
+- example: private string name, public void getName();,...
+*** Important infomation in service class need init with private key, and controller class just use method public of service class.
+
+2. Inheritance (Kế thừa) - Child class can be Inheritance Parents Class. 
+- example: Controller inheritance from ControllerBase class to use some method of ControllerBase.
+
+3. Abtraction (Trừu tượng) - Focus to interface (what is it?) don't care How can do it.
+- example: Controller call Interface Class. Controller just want know which function, method Controller can use.
+
+4. Polymorphism (Đa hình) - Method can be initial from Parent class, but children can use different.
+- example: InterfaceCar (class) {private info; private seat; } 
+        -> children1 is HyperCarClass {info = engine, topspeed, price} but children2 is FamilyCar {info = 7 seat, save energy|gas}
+
+
+

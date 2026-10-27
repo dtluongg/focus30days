@@ -1,0 +1,112 @@
+@TryToLearnNetCore_HostAddress = https://localhost:7224
+GET http://localhost:5050/weatherforecast
+Accept: application/json
+
+
+###
+
+GET {{TryToLearnNetCore_HostAddress}}/weatherforecast
+
+###
+
+@notify=False
+PUT {{TryToLearnNetCore_HostAddress}}/api/cars/Car01?notify={{notify}}
+Content-Type: application/json
+
+{
+  "carID": "Car01",
+  "carName": "Dodge Challenger",
+  "carType": "Muscal",
+  "carPrice": 2312312,
+  "carTopSpeed": 213
+}
+
+###
+
+PUT {{TryToLearnNetCore_HostAddress}}/api/cars/{id}?notify={{notify}}
+Content-Type: application/json
+
+{
+  //Cars
+}
+
+###
+
+PUT {{TryToLearnNetCore_HostAddress}}/api/cars/{id}?notify={{notify}}
+Content-Type: application/json
+
+{
+  //Cars
+}
+
+###
+
+PUT {{TryToLearnNetCore_HostAddress}}/api/carscontroller2/{id}?notify={{notify}}
+Content-Type: application/json
+
+{
+  "carID": "Car01",
+  "carName": "Dodge Challenger",
+  "carType": "Muscal",
+  "carPrice": 2312312,
+  "carTopSpeed": 213
+}
+
+###
+
+PUT {{TryToLearnNetCore_HostAddress}}/api/cars2/{id}?notify={{notify}}
+Content-Type: application/json
+
+{
+  "carID": "Car01",
+  "carName": "Dodge Challenger",
+  "carType": "Muscal",
+  "carPrice": 2312312,
+  "carTopSpeed": 213
+}
+
+###
+
+PUT {{TryToLearnNetCore_HostAddress}}/api/carscontroller2/{id}?notify={{notify}}
+Content-Type: application/json
+
+{
+  //Cars2
+}
+
+###
+
+PUT {{TryToLearnNetCore_HostAddress}}/api/carsday2/{id}?notify={{notify}}
+Content-Type: application/json
+
+{
+  "carID": "Car01",
+  "carName": "Dodge Challenger",
+  "carType": "Muscal",
+  "carPrice": 2312312,
+  "carTopSpeed": 213
+}
+
+###
+
+@id= cAR022
+GET {{TryToLearnNetCore_HostAddress}}/api/carsday2/{{id}}
+
+###
+
+POST {{TryToLearnNetCore_HostAddress}}/api/carday3
+Content-Type: application/json
+
+{
+  "carID": "Car03",
+  "carName": "Dodge Challenger",
+  "carType": "Muscal",
+  "carPrice": 2312312,
+  "carTopSpeed": 213
+}
+
+###
+@id= car045
+GET {{TryToLearnNetCore_HostAddress}}/api/carday3/{{id}}
+
+###

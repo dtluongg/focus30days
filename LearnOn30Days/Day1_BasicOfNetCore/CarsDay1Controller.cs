@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace TryToLearnNetCore.LearnOn30Days.Day1
+namespace TryToLearnNetCore.LearnOn30Days.Day1_BasicOfNetCore
 {
     [Route("api/[controller]")]
     [ApiController]
