@@ -1,0 +1,24 @@
+semicolons ------------------------- dấu chấm phẩy (;)
+JS have ASI (Automatic Semicolons Insertions)
+JS auto complete line code with semicolons (;), but we need attention at object, or return.
+Because JS auto complete semicolons after enter complete line.
+If we use:
+    ex:
+        return 
+        {
+            value = "abc"
+        };
+    JS will be know like is:
+        return;
+        {
+            value = "abc"
+        };
+
+    =>>> Undefind.
+
+IIFE (Immediately Invoked Function Expression) -> function can call after initial 
+    ex:
+    (function() {
+        console.log("Hello Luong");
+    })();
+-> We need use semicolons before initial IIFE, because sometime JS can know () is formular... so we will have error when running

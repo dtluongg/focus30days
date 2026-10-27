@@ -1,0 +1,28 @@
+1. Which of the following is the correct syntax for creating strings in JavaScript?
+=> const str = "this is a string"
+2. What happens if a string starts with a single quote and ends with a double quote?
+=> It will throw a syntax error.
+3. Why are strings considered immutable in JavaScript?
+=> Once a string is created, we cannot change its characters directly
+
+
+----
+
+- In string, we can add or append by (+=) operator. 
+- example:
+    let greeting = 'hello';
+    greeting += ', my name is Luong'
+    console.log(greeting) // hello, my name is Luong
+    
+
+- We have two options for expand string. 
+1. same example above.
+2. use concat() function. 
+- example: 
+    let str1 = 'Luong'
+    let str2 = 'Do Tien'
+    let result = str1.concat(' ', str2);
+    console.log(result) // 'Luong Do Tien'
+
+- Why is console.log() helpful when building out web applications?
+-> It is commonly used by developers for debugging and inspecting values or expressions in their code during development.
