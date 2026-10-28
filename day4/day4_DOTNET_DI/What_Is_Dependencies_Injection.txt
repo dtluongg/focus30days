@@ -1,0 +1,17 @@
+1. What is Dependencies Injection?
+- This is keywork skill design pattern when we working with OOP.
+- This skill 
+    + will be help developer save the time for maintenace.
+    + provide 3 method for manage lifetimes of data (Transient, Scoped, Singleton);
+
+
+2. Different Transient, Scoped and Singleton
+a. Transient (lever 1) - use one time -> when we use class one time, and this class don't need
+    to save data, state,...
+ex: You just use paper napkin once. After used, you need move it to gabrage
+b. Scoped (lever 2) - In lifetimes program woking, class(object) has been called will be use when request turn off.
+ex: one person use one ricebowl, you will use ricebowl during time eating, ricebowl will be refill when you end eating.
+c. Singleton: data initial once but use during server turn off (appseting.js)...
+ex: The kitchen use for everyone can eat during all out, kitchen will be close.
+
+
