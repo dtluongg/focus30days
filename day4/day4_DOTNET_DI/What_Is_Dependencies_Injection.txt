@@ -24,7 +24,7 @@ ex: The kitchen use for everyone can eat during all out, kitchen will be close.
 private readonly ImplCars _CarServices;
 public CarDay4Controller(ImplCars carServices)
 {
-    carServices = _CarServices;
+   _CarServices = carServices;
 }
 // If we no heve this function, we will meet error:
 /*
@@ -54,3 +54,10 @@ HEADERS
 =======
 Host: localhost:7224
 traceparent: 00-8460172d227f2864f11943c66227ff6b-4ed1efc3b9424d12-00
+
+
+
+*** In Program.cs, we need remember sign for DI follow struct:
+builder.Services.AddScoped<TService, TImplementation>();
+First variance is class Interface, Second is Implement Interface.
+

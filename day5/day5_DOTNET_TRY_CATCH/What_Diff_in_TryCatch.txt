@@ -1,0 +1,19 @@
+1. Console App vs Web API (Why try/catch is different?)
+- In console apps: An unhandled error crasheds the entire application. We use try/catch to keep the app running.
+- In web api(API.NET CORE): one error does not crash the server. It only stops that single user's request.
+
+2. What is the problem when don't manage try/catch trulthy?
+- Code will be duplication (Boilerplate): You have to write try/catch in every controller action.
+- Inconsistent errors: Different developers return different json data error.
+- Secirity Risk: An unhandled error can leak sentitive data to user.
+
+3. The Real Meaning of Exeption Middleware (Centralized Handling)
+- Centralized Gatekeeper: Middleware acts as a security checkpoint at the entrance of the pipeline.
+- Catch all errors: It wraps all downstream controller in one single place.
+- Clean controllers: U only write business logic, no messy try/catch needed inside controller.
+- Uniform reponse: The Frontend always receives a standard error response (HTTP 500).
+- Safe logging: The server logs the root cause for developers without showing details to the client.
+
+*** 
+Instead of using try/catch in every action, we use a Custom Exeption Middleware to handle errors globally. This keep controllers clean, 
+ensures consistent error responses, and prevents sentitive data leaks.
