@@ -1,0 +1,4 @@
+ControllerBase: Contains core web api features (HttpContext Ok(), BadRequest(), NotFound()); 
+ControllerBase does not support view, only use with work with RestAPI
+
+Controller: Inherits from controllerbase, and add razor view (View(), ViewData(), ViewBag()) for MVC Controller.

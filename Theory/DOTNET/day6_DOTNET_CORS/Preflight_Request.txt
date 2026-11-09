@@ -1,0 +1,5 @@
+Preflight Request
+- For none simple http request, like put, delete, post,... or request carring custom header like: Authorization / Content-Type: application/json
+  the browser automatically sends a lightweight preflight request using the OPTIONS method before actual request.
+- It ask sever "Are you willing to accept a PUT request from X with these header?
+- If the server via from CORS Headers, the browser sends the acual request.

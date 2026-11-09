@@ -1,0 +1,8 @@
+1. What is cors?
+- Browser Security Mechanism: CORS is a security feature enforced strictly by the browser, 
+  not the server, based on the Same-Origin Policy (SOP).
+- What is an Origin? A combination of three elements: Protocol + Domain + Port 
+  (e.g., http://localhost:5173 vs https://localhost:7159 are different origins).
+- The problem: By default, backend need block frontend access sever from reading API.
+  If domain of frontend not yet signup at backend. backend will be prevent malicious site.
+- The solution: The backend must allow the frontend origin the HTTP header: Access-Control-Allow-Origin: Http://....
