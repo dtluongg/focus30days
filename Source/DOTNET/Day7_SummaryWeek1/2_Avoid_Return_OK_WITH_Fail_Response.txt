@@ -1,0 +1,6 @@
+Http 200 means success at the network transport layer.
+Break client error handling: Http client (like axios/fetch)  automatically trigger .catch() or error intereption only on 4xx or 5xx codes reponse.
+  Returning 200 will be force frontend developers to write redudent check like if (!res.data.success) with every file, every code.
+All tools might fail catching error response
+
+  

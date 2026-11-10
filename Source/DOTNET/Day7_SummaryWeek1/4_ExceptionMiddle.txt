@@ -1,0 +1,6 @@
+Why use it?
+- Provides a centralized  safety net at the HTTP pipeline entrance, it eliminates repetitive try/catch boilerplate across controllers, ensures, a uniform error response format, and prevents sentitive data leaks (stack traces, SQL details)
+- When server or backend or data have problem, if we don't have exception middle, system will log all data of error, maybe including sql query or another information private.
+
+How it work?
+- Wraps await _next(context) inside a try/catch. It logs unhandled exceptions internally and returns a clean, sanitized HTTP 500 JSON reponse to the client.

@@ -1,0 +1,10 @@
+Transient: create new when have new request/ require,.. best for lightweight, stateless services.
+
+
+Scope: One instance per incoming HTTP request, shared across the request lifecycle, then disposed.
+      Mandatory for DbContext and Business Services to ensure thread safety and avoid connection leak.
+
+
+Singleton: A singleton instance create once and shared across the entire application lifetime (Until server to stop).
+      Use for memory, configuration or logger.
+      

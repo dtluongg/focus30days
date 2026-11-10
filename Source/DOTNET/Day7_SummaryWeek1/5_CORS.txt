@@ -1,0 +1,3 @@
+A browser-enforced security rule based on the same-origin policy (SOP). An origin consists of Protocol + Domain + Port 
+
+Browsers block frontend clients if url of frontend different url sign at backend.
