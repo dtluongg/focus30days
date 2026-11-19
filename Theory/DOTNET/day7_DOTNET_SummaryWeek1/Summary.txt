@@ -1,0 +1,27 @@
+1. Controller vs ControllerBase
+ControllerBase: Contains core WebAPI features (HTTP context, Ok(), BadRequest(), NotFound())
+- It does not support Views. Always use it for RESTfulAPIs to eliminate overhead.
+Controller: Inherits from ControllerBase and adds Razor/View support (View(), ViewData, ViewBag) for MVC apps rendering HTML.
+
+2. Why Avoid Returning 200Ok with {success: false}?
+- Violates HTTP Semantics: HTTP 200 means success at the network transport layer
+- Breaks Client Error Handling: HTTP clients (like Axios/Fetch) automatically trigger .catch() or error intercaptors only on 4xx and 5xx codes. 
+Returning 200 forces frontend developers to write redundant checks like if (!res.data.success).
+- Corrupts Infrastructure: Caching layers (CDNs/proxies) might cache error responses, and monitoring tools(APM, Datadog) fail to track error reates accurately
+
+3. Dependencies Injection (DI) Lifetimes in ASP.NET Core
+- Transient: A new instance is created every time it is requested. Best for lightweight, stateless services.
+- Scoped: One instance per incoming HTTP request, shared across the request lifecycle, then disposed. Mandatory for DbContext and Business Services to ensure thread safety and avoid connection leaks.
+- Singleton: A single instance created once and shared across the entire application lifetime (until the sercer stops). Used for memory caching, configuration, or loggers.
+
+4. Custom Exception Middleware
+- Why Use It: Prodides a centralized safety net at the HTTP pipeline entrance. It eliminates repetitive try/catch boilerplate across controllers, ensures a uniform errror response format, and prevents sensitive data leaks (stack traces, SQL details).
+- How It Work?: Wraps await _next(context) inside a try/catch. It logs unhandled exceptions internally and returns a clean, santized HTTP 500 JSON reponse to the client.
+
+5. CORS (Cross-Origin Resouce Sharing)
+- What it cors?: A browser-enforced security rule based on the Same-Origin Policy (SOP). An origin consists of Protocol + Domain + Port
+- Why Needed: Browsers block frontend clients (e.g., React on localhost: 5173) from reading responses from a different backend origin (e.g., .NET API on localhost:7224) unless the server explicitly allows it via the Access-Control-Allow-Origin header. 
+
++=========================================================================+
+
+In week 1, I standardized an ASP.NET COre Web API architecture. I used ControllerBase for lightweight JSON endpoints, separated business login info independent services via interfaces, and registered them as Scoped dependencies. Instead of poluuting controllers with local try/catch blocks, I implemented a global ExceptionHandlingMiddleware to ensure consistent error payloads and avoid sensitive infomation leaks. Finally, I configured CORS to allow seamless communication with a React Client.
